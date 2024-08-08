@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador de Modificaciones de Motor</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Simulador de Modificaciones de Motor</h1>
+        <form id="modForm" method="post">
+            <label for="displacement">Cilindrada (L):</label>
+            <input type="number" step="0.1" id="displacement" name="displacement" required>
+
+            <label for="boost">Aumento de presión (PSI):</label>
+            <input type="number" step="0.1" id="boost" name="boost" required>
+
+            <label for="efficiency">Eficiencia (%):</label>
+            <input type="number" step="0.1" id="efficiency" name="efficiency" required>
+
+            <label for="rpm">Revoluciones por minuto (RPM):</label>
+            <input type="number" step="1" id="rpm" name="rpm" required>
+
+            <label for="weight">Peso del vehículo (kg):</label>
+            <input type="number" step="1" id="weight" name="weight" required>
+
+            <label for="ecu_mod">Modificación de ECU (%):</label>
+            <input type="number" step="0.1" id="ecu_mod" name="ecu_mod" required>
+
+            <label for="exhaust_mod">Modificación de escape (%):</label>
+            <input type="number" step="0.1" id="exhaust_mod" name="exhaust_mod" required>
+
+            <label for="gear_ratio">Relación de transmisión:</label>
+            <input type="number" step="0.1" id="gear_ratio" name="gear_ratio" required>
+
+            <button type="submit">Calcular</button>
+        </form>
+
+        <div class="results" id="results" style="display: none;">
+            <h2>Resultados</h2>
+            <p><strong>Potencia (HP):</strong> <span id="resultHorsepower"></span></p>
+            <p><strong>Torque (Nm):</strong> <span id="resultTorque"></span></p>
+            <p><strong>Aceleración (m/s²):</strong> <span id="resultAcceleration"></span></p>
+            <p><strong>Eficiencia de combustible (MPG):</strong> <span id="resultFuelEfficiency"></span></p>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
