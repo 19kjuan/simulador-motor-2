@@ -29,6 +29,12 @@ def index():
 
     return render_template('index.html')
 
+
+
+@app.route('/tennis-coaching-system', methods=['GET'])
+def tennis_coaching_system():
+    return render_template('Tennis_coaching_system.html')
+
 if __name__ == '__main__':
     app.run(debug=True)
 
